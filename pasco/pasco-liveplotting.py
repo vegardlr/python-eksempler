@@ -14,13 +14,13 @@ import csv
 ##############################################################
 #Edit this section: 
 ##############################################################
-device_id = '469-021'       #Change to you sensor
-data      = 'Accelerationx' #Choose from the list of available data
+device_id = '429-980'       #Change to you sensor
+data      = 'CO2Concentration' #Choose from the list of available data
 measure_time = 15.0         #Say how many seconds you want to measure
-ymin =  8                   #What max/min y-values do you expect
-ymax =  11.5
+ymin =  500                   #What max/min y-values do you expect
+ymax =  2000
 max_iterations = 200        #At how many iterations do you wish to abort?
-animate = False
+animate = True
 
 
 #################################################################
