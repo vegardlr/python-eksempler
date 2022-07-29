@@ -20,7 +20,7 @@ import numpy as np
 # 'Temperature', 'Brightness', 'Loudness', 'MagneticFieldStrength', 
 # 'Accelerationx', 'Accelerationy', 'TiltAngleX', 'TiltAngleY', 
 # 'CartPosition', 'CartVelocity', 'Button1', 'Button2'
-data    = 'Accelerationx'   #Choose from the list above
+data    = 'Accelerationy'   #Choose from the list above
 measure_time = 15.0         #Say how many seconds you want to measure
 ymin =  -15                  #What max/min y-values do you expect
 ymax =  15

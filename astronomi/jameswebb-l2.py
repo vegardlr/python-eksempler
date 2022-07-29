@@ -67,7 +67,8 @@ line3, = ax1.plot(xjames,yjames,'r-',label="JWST")
 line4, = ax2.plot(xjord,yjord,'b-',label="Jorden")
 line5, = ax2.plot(xjames,yjames,'r-',label="JWST")
 line6, = ax2.plot(PL2[0],PL2[1],'bx',label="L2")
-#line7, = ax2.quiver(PL2[0],PL2[1],0.0,0.0)
+line7, = ax2.plot(xjord[-1],yjord[-1],'bo')
+line8, = ax2.plot(xjames[-1],yjames[-1],'ro')
 ax1.legend()
 ax2.legend()
 
@@ -141,10 +142,10 @@ while True:
     #Finn hvor hvor James Webb er ift. L2
     Rjames_L2 = np.linalg.norm(Pjames-PL2) 
     Ejames_L2 = (Pjames-PL2) / Rjames
-    if(Rjames_L2 > 100000.0):
-        Fmotor = -Ejames_L2 * G * Mjord * Mjames / Rjames_L2**2
-    else:
-        Fmotor = np.array([0.0,0.0])
+    #if(Rjames_L2 > 100000.0):
+    #    Fmotor = -Ejames_L2 * G * Mjord * Mjames / Rjames_L2**2
+    #else:
+    #    Fmotor = np.array([0.0,0.0])
     
 
     # Skriv ut antall dager som er simulert til terminal/konsoll
@@ -180,12 +181,15 @@ while True:
         line5.set_ydata(yjames)
         line6.set_xdata(PL2[0]/AE)
         line6.set_ydata(PL2[1]/AE)
-#        line7.set_offsets([Pjames[0],Pjames[1]])
-#        line7.set_UVC(Fmotor)
+        line7.set_xdata(xjord[-1])
+        line7.set_ydata(yjord[-1])
+        line8.set_xdata(xjames[-1])
+        line8.set_ydata(yjames[-1])
 
         #Juster vinduet som følger James Webb og Jorden
-        ax2.set_xlim(PL2[0]/AE-0.010,PL2[0]/AE+0.010)
-        ax2.set_ylim(PL2[1]/AE-0.010,PL2[1]/AE+0.010)
+        vindu = 0.02
+        ax2.set_xlim(PL2[0]/AE-vindu,PL2[0]/AE+vindu)
+        ax2.set_ylim(PL2[1]/AE-vindu,PL2[1]/AE+vindu)
 
         #Tegn det nye plottet
         fig.canvas.draw()

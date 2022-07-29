@@ -6,8 +6,8 @@
 # 
 # Documentation on pasco libraries: https://pypi.org/project/pasco/
 from sys import exit
-from pasco.pasco_ble_device import PASCOBLEDevice
-#from pasco.code_node_device import CodeNodeDevice
+from pasco import PASCOBLEDevice
+#from pasco.code_node_device import C10odeNodeDevice
 #from pasco.character_library import Icons
 
 # Create a code element, through which we can handle the instrument
@@ -47,8 +47,7 @@ select = input('Select a measurement: ') if len(measurement_list) > 1 else 0
 #print(select)
 #print(len(measurement_list))
 measurement = measurement_list[int(select)-1]
-print(measurement)
-print("Result: "+str(device.read_data(measurement))+" "+\
+print(measurement+":"+str(device.read_data(measurement))+ \
         device.get_measurement_unit(measurement))
 
 #Clean disconnect. 

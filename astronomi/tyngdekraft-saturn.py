@@ -6,7 +6,7 @@
 #Installer pythonskole på ditt system med: 
 #  pip install pythonskole
 #Importer pythonskole.astronomi sin Tyngdekraft-funksjon
-from pythonskole.astronomi import Tyngdekraft
+import pythonskole as ps
 
 # Importer noen utvalgte funksjoner fra numpy
 # som vi trenger for å lage lister med tall (arrays), 
@@ -18,7 +18,7 @@ from numpy import array, random, sin, cos, pi
 # Lag ditt 2D-rom, og bestem: 
 #  - størrelsen L (hvor stor boksen skal være, LxL)
 #  - Hvilken tittel du vil ha skrevet i plottevinduet
-modell = Tyngdekraft(L=20.0,tittel="Saturn")
+modell = ps.Tyngdekraft(L=20.0,tittel="Saturn")
 
 # Nå skal vi legge til objekter/planeter i modellen. Da 
 # trenger vi funksjonen nyttObjekt som bruker følgende argumenter: 
